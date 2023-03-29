@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+
+</style>
+<body>
+
+    <div class="container">
+        <h1>Calculate your age</h1>
+        <div class="inp-box">
+            <div>
+                <h3>MY age is!</h3>
+                <input type="number" id="input"><br>
+                <button id="calculate">Do it</button>
+            </div>
+            <div>
+                <input type="text" class="days" disabled>
+                <input type="text" class="weeks" disabled>
+                <input type="text" class="hours" disabled>
+                <input type="text" class="min" disabled>
+                <input type="text" class="sec" disabled>
+            </div>
+        </div>
+    </div>
+    <script>
+        const input =document.getElementById("input"),
+              calculate =document.getElementById("calculate");
+
+        calculate.addEventListener("click",
+        function(){
+
+            let days= input.value * 365;
+            document.querySelector(".days").value = days +" days";
+
+            let weeks = Math.trunc(input.value * 52.1);
+         document.querySelector('.weeks').value = weeks + " weeks";
+
+         let hours = (24*365)*input.value;
+         document.querySelector(".hours").value = hours + ' hours';
+
+         let min = ((60*24)*365)*input.value;
+         document.querySelector(".min").value = min + ' minutes';
+
+         let sce = (((60*60)*24)*365)*input.value;
+         document.querySelector(".sec").value = sce + ' secounds';
+        })
+    </script>
+</body>
+</html>
